@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BaranMusic33 | Resmi Müzik Platformu</title>
+<title>BaranMusic33 | Resmi Sanatçı</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
+<div id="particles"></div>
+
 <header>
 
-<nav class="navbar">
+<nav>
 
 <div class="logo">
 
-<img src="assets/profile.jpg" alt="Profil">
+<h1>
 
-<div>
+<span>Baran</span>Music33
 
-<h2>BaranMusic33</h2>
+</h1>
 
-<span class="verified">
+<div class="verify">
+
 <i class="fa-solid fa-circle-check"></i>
-Doğrulanmış Sanatçı
-</span>
+
+Resmi Sanatçı
 
 </div>
 
@@ -39,17 +44,19 @@ Doğrulanmış Sanatçı
 
 <ul>
 
-<li><a href="#anasayfa">Ana Sayfa</a></li>
+<li><a href="#home">Ana Sayfa</a></li>
 
-<li><a href="#albumler">Albümler</a></li>
+<li><a href="#songs">Şarkılar</a></li>
 
-<li><a href="#sarkilar">Şarkılar</a></li>
+<li><a href="#albums">Albümler</a></li>
 
-<li><a href="#videolar">Videolar</a></li>
+<li><a href="#videos">Videolar</a></li>
 
-<li><a href="#favoriler">Favoriler</a></li>
+<li><a href="#gallery">Galeri</a></li>
 
-<li><a href="#iletisim">İletişim</a></li>
+<li><a href="#about">Hakkımda</a></li>
+
+<li><a href="#contact">İletişim</a></li>
 
 </ul>
 
@@ -57,250 +64,186 @@ Doğrulanmış Sanatçı
 
 </header>
 
-<section id="anasayfa" class="hero">
+<section id="home" class="hero">
 
-<img src="assets/banner.jpg" class="banner">
+<div class="hero-left">
 
-<div class="overlay">
-
-<img src="assets/profile.jpg" class="profile">
+<h3>RESMİ SANATÇI</h3>
 
 <h1>BaranMusic33</h1>
 
-<h3>Arabesk • Pop Sanatçısı</h3>
-
 <p>
 
-Resmi BaranMusic33 Müzik Platformuna Hoş Geldiniz.
+Arabesk • Pop • Slow
 
 </p>
 
-<div class="hero-buttons">
+<div class="heroButtons">
 
-<button class="followBtn">
+<a href="#songs" class="goldBtn">
 
-Takip Et
-
-</button>
-
-<button class="shareBtn">
-
-Paylaş
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="search">
-
-<h2>
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
-Ara
-
-</h2>
-
-<input
-
-type="text"
-
-id="searchInput"
-
-placeholder="Şarkı, Albüm veya Video Ara..."
-
->
-
-</section>
-
-<section id="albumler">
-
-<h2>💿 Albümler</h2>
-
-<div class="albums">
-
-<!-- Daha sonra eklenecek -->
-
-</div>
-
-</section>
-
-<section id="sarkilar">
-
-<h2>🎵 Şarkılar</h2>
-
-<div class="songs">
-
-<!-- Daha sonra eklenecek -->
-
-</div>
-
-</section>
-
-<section id="videolar">
-
-<h2>🎬 Videolar</h2>
-
-<div id="videoContainer">
-
-<!-- Daha sonra eklenecek -->
-
-</div>
-
-<div class="uploadBox">
-
-<h3>Video Ekle</h3>
-
-<input
-type="text"
-placeholder="Video Başlığı">
-
-<input
-type="text"
-placeholder="Kapak Fotoğrafı">
-
-<input
-type="text"
-placeholder="Video Dosyası">
-
-<button>
-
-Video Yayınla
-
-</button>
-
-</div>
-
-<section id="favoriler">
-
-<h2>❤️ Favoriler</h2>
-
-<div class="favoriteContainer">
-
-<div class="emptyCard">
-
-<i class="fa-solid fa-heart"></i>
-
-<h3>Henüz Favori Yok</h3>
-
-<p>Daha sonra favori şarkılar burada görünecek.</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="player">
-
-<h2>🎧 Müzik Oynatıcı</h2>
-
-<div class="musicPlayer">
-
-<div class="playerLeft">
-
-<img src="assets/profile.jpg" class="playerCover">
-
-<div>
-
-<h3>Şarkı Seçilmedi</h3>
-
-<p>BaranMusic33</p>
-
-</div>
-
-</div>
-
-<div class="playerCenter">
-
-<button id="prev">
-
-<i class="fa-solid fa-backward-step"></i>
-
-</button>
-
-<button id="play">
-
-<i class="fa-solid fa-play"></i>
-
-</button>
-
-<button id="next">
-
-<i class="fa-solid fa-forward-step"></i>
-
-</button>
-
-</div>
-
-<div class="playerRight">
-
-<input
-type="range"
-min="0"
-max="100"
-value="0">
-
-</div>
-
-</div>
-
-</section>
-
-<section id="iletisim">
-
-<h2>📞 İletişim</h2>
-
-<div class="contactBox">
-
-<h3>BaranMusic33</h3>
-
-<p>Arabesk • Pop Sanatçısı</p>
-
-<p>
-
-Telefon:
-
-<a href="tel:+905380172815">
-
-0538 017 2815
+Şarkılar
 
 </a>
 
-</p>
+<a href="#videos" class="darkBtn">
+
+Videolar
+
+</a>
+
+</div>
+
+<div class="socialHero">
+
+<a href="https://youtube.com/@brn-90bpm?si=ciLimWLVVKuacWTr" target="_blank">
+
+<i class="fab fa-youtube"></i>
+
+</a>
+
+<a href="https://www.instagram.com/barannnnn_33" target="_blank">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+<a href="https://www.facebook.com/share/19LvketZvw/" target="_blank">
+
+<i class="fab fa-facebook"></i>
+
+</a>
+
+<a href="https://www.tiktok.com/@baranisteee33" target="_blank">
+
+<i class="fab fa-tiktok"></i>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="artistCard">
+
+<img src="assets/profile.jpg">
+
+<div class="glow"></div>
+
+</div>
 
 </div>
 
 </section>
 
-<footer>
+<section class="stats">
 
-<div class="footerLogo">
+<div class="box">
 
-<img src="assets/profile.jpg">
+<h1>0</h1>
 
-<h2>BaranMusic33</h2>
+<p>Şarkı</p>
 
 </div>
 
-<p>
+<div class="box">
 
-© 2026 BaranMusic33
+<h1>0</h1>
 
-Tüm Hakları Saklıdır.
+<p>Albüm</p>
 
-</p>
+</div>
 
-<div class="social">
+<div class="box">
 
-<a href="#"><
+<h1>0</h1>
 
+<p>Video</p>
 
+</div>
 
-  
+<div class="box">
+
+<h1>4</h1>
+
+<p>Sosyal Medya</p>
+
+</div>
+
+</section>
+
+<section id="songs">
+
+<h2>Şarkılar</h2>
+
+<div class="cards">
+
+<div class="songCard add">
+
+<i class="fa-solid fa-plus"></i>
+
+<h3>Yeni Şarkı</h3>
+
+<p>Daha sonra buraya ekle.</p>
+
+</div>
+
+<div class="songCard add">
+
+<i class="fa-solid fa-plus"></i>
+
+<h3>Yeni Şarkı</h3>
+
+<p>Daha sonra buraya ekle.</p>
+
+</div>
+
+<div class="songCard add">
+
+<i class="fa-solid fa-plus"></i>
+
+<h3>Yeni Şarkı</h3>
+
+<p>Daha sonra buraya ekle.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="albums">
+
+<h2>Albümler</h2>
+
+<div class="cards">
+
+<div class="albumCard">
+
+<i class="fa-solid fa-compact-disc"></i>
+
+<h3>Yakında</h3>
+
+</div>
+
+<div class="albumCard">
+
+<i class="fa-solid fa-compact-disc"></i>
+
+<h3>Yakında</h3>
+
+</div>
+
+<div class="albumCard">
+
+<i class="fa-solid fa-compact-disc"></i>
+
+<h3>Yakında</h3>
+
+</div>
+
+</div>
 
 </section>
