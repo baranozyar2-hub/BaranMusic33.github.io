@@ -996,7 +996,9 @@ img {
 }
 
 
-
+img {
+    display: none;
+}
 
 
 
