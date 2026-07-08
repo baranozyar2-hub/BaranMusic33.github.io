@@ -1,303 +1,215 @@
-// =======================================
-// BARANMUSIC33 OFFICIAL SCRIPT
-// =======================================
-
-// Arama
-
-const searchInput = document.getElementById("searchInput");
-
-searchInput?.addEventListener("keyup", function(){
-
-let value = this.value.toLowerCase();
-
-document.querySelectorAll(".album-card,.song-card,.video-card").forEach(card=>{
-
-card.style.display = card.innerText.toLowerCase().includes(value)
-? "block"
-: "none";
-
-});
-
-});
-
-// Takip Et
-
-const followBtn = document.querySelector(".followBtn");
-
-if(followBtn){
-
-followBtn.onclick = ()=>{
-
-followBtn.innerHTML="✔ Takip Ediliyor";
-
-followBtn.style.background="#27ae60";
-
-};
-
-}
-
-// Paylaş
-
-const shareBtn=document.querySelector(".shareBtn");
-
-if(shareBtn){
-
-shareBtn.onclick=()=>{
-
-if(navigator.share){
-
-navigator.share({
-
-title:"BaranMusic33",
-
-text:"BaranMusic33 Resmi Müzik Platformu",
-
-url:window.location.href
-
-});
-
-}else{
-
-navigator.clipboard.writeText(window.location.href);
-
-alert("Site bağlantısı kopyalandı.");
-
-}
-
-};
-
-}
-
-// Favoriler
-
-document.querySelectorAll(".song-play").forEach(btn=>{
-
-btn.onclick=()=>{
-
-alert("Favorilere eklendi ❤️");
-
-};
-
-});
-
-// Müzik Oynatıcı
-
-const play=document.getElementById("play");
-
-let playing=false;
-
-if(play){
-
-play.onclick=()=>{
-
-playing=!playing;
-
-play.innerHTML=playing
-
-?'<i class="fa-solid fa-pause"></i>'
-
-:'<i class="fa-solid fa-play"></i>';
-
-};
-
-}
-
-// Video Yayınlama
-
-const uploadBtn=document.querySelector(".uploadBox button");
-
-if(uploadBtn){
-
-uploadBtn.onclick=()=>{
-
-const inputs=document.querySelectorAll(".uploadBox input");
-
-const title=inputs[0].value;
-
-const image=inputs[1].value;
-
-const video=inputs[2].value;
-
-if(title==""||image==""||video==""){
-
-alert("Lütfen tüm alanları doldurun.");
-
-return;
-
-}
-
-const container=document.getElementById("videoContainer");
-
-container.innerHTML+=`
-
-<div class="video-card">
-
-<img src="${image}">
-
-<div class="video-info">
-
-<h3>${title}</h3>
-
-<video controls width="100%">
-
-<source src="${video}" type="video/mp4">
-
-</video>
-
-</div>
-
-</div>
-
-`;
-
-inputs.forEach(i=>i.value="");
-
-alert("Video eklendi.");
-
-};
-
-}
-
-// Sayfa Açılış Animasyonu
-
-window.onload=()=>{
-
-document.body.style.opacity="0";
-
-setTimeout(()=>{
-
-document.body.style.transition="1s";
-
-document.body.style.opacity="1";
-
-},100);
-
-};
-
-// Yukarı Çık
-
-window.addEventListener("scroll",()=>{
-
-const header=document.querySelector("header");
-
-if(window.scrollY>100){
-
-header.style.background="#000";
-
-}else{
-
-header.style.background="rgba(0,0,0,.75)";
-
-}
-
-});
-
-// Geliştirici
-
-console.log("BaranMusic33 Official Website");
-console.log("Developer: BaranMusic33");
-// ==============================
-// BARANMUSIC33 PREMIUM v2
-// ==============================
-
-// Sayfa yüklendi bildirimi
+// ==========================
+// BaranMusic33 Official
+// script.js
+// ==========================
+
+// Sayfa yüklendiğinde animasyon
 window.addEventListener("load", () => {
-    console.log("BaranMusic33 Premium Yüklendi");
+    document.body.classList.add("loaded");
+});
+
+// Menü aktif bağlantı
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+// Kart Animasyonu
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll(".songCard,.albumCard,.videoCard,.galleryCard,.box")
+.forEach(card => {
+
+    observer.observe(card);
+
 });
 
 // Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function(e){
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+
+    anchor.addEventListener("click", function(e){
+
         e.preventDefault();
 
         document.querySelector(this.getAttribute("href"))
-        ?.scrollIntoView({
+        .scrollIntoView({
+
             behavior:"smooth"
+
         });
 
     });
+
 });
 
-// Navbar küçülme efekti
-window.addEventListener("scroll",()=>{
+// İstatistik Sayaçları
+const counters = document.querySelectorAll(".box h1");
 
-const header=document.querySelector("header");
+counters.forEach(counter=>{
 
-if(window.scrollY>60){
+    const target = Number(counter.innerText);
 
-header.classList.add("small");
+    let count = 0;
 
-}else{
+    const speed = 30;
 
-header.classList.remove("small");
+    function update(){
+
+        if(count < target){
+
+            count++;
+
+            counter.innerText = count;
+
+            setTimeout(update,speed);
+
+        }else{
+
+            counter.innerText = target;
+
+        }
+
+    }
+
+    update();
+
+});
+
+// Takip Butonu
+const followBtn = document.querySelector(".goldBtn");
+
+if(followBtn){
+
+followBtn.addEventListener("click",()=>{
+
+    followBtn.innerHTML="✔ Takip Ediliyor";
+
+    followBtn.style.background="#00d26a";
+
+});
+
+}
+
+// Mouse Glow
+document.addEventListener("mousemove",(e)=>{
+
+const glow=document.querySelector(".glow");
+
+if(glow){
+
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
 
 }
 
 });
 
-// Buton Efekti
-document.querySelectorAll("button").forEach(btn=>{
+// Arama
+const search=document.getElementById("searchInput");
 
-btn.addEventListener("mouseenter",()=>{
+if(search){
 
-btn.style.transform="scale(1.05)";
+search.addEventListener("keyup",()=>{
+
+const value=search.value.toLowerCase();
+
+document.querySelectorAll(".songCard").forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+card.style.display=text.includes(value)?"block":"none";
 
 });
 
-btn.addEventListener("mouseleave",()=>{
+});
 
-btn.style.transform="scale(1)";
+}
+
+// Gelecekte şarkı eklemek için
+let songs=[];
+
+function addSong(title,cover,file){
+
+songs.push({
+
+title,
+cover,
+file
 
 });
 
+console.log("Şarkı eklendi:",title);
+
+}
+
+// Gelecekte video eklemek için
+let videos=[];
+
+function addVideo(title,cover,video){
+
+videos.push({
+
+title,
+cover,
+video
+
 });
 
-// Rastgele Hoşgeldiniz Yazısı
-
-const messages=[
-
-"BaranMusic33 Resmi Sitesine Hoşgeldiniz",
-
-"Arabesk • Pop Dünyasına Hoşgeldiniz",
-
-"Yeni Şarkılar Çok Yakında",
-
-"Takipte Kalın"
-
-];
-
-const welcome=document.querySelector(".overlay p");
-
-if(welcome){
-
-welcome.innerHTML=messages[Math.floor(Math.random()*messages.length)];
+console.log("Video eklendi:",title);
 
 }
 
-// Sayfa Başlığı
+// Gelecekte albüm eklemek için
+let albums=[];
 
-let original=document.title;
+function addAlbum(title,cover){
 
-window.onblur=()=>{
+albums.push({
 
-document.title="🎵 Geri Gel :)";
+title,
+cover
 
-}
+});
 
-window.onfocus=()=>{
-
-document.title=original;
-
-}
-
-// Footer Yılı
-
-const year=new Date().getFullYear();
-
-const footer=document.querySelector("footer p");
-
-if(footer){
-
-footer.innerHTML="© "+year+" BaranMusic33 | Tüm Hakları Saklıdır.";
+console.log("Albüm eklendi:",title);
 
 }
+
+console.log("BaranMusic33 Official Script Hazır ✔");
