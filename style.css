@@ -1,13 +1,1002 @@
-html{
+/* ===========================
+   İSTATİSTİKLER
+=========================== */
 
-scroll-behavior:smooth;
+.stats{
+    width:90%;
+    margin:70px auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.stats div{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,215,0,.2);
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    backdrop-filter:blur(15px);
+    transition:.4s;
+}
+
+.stats div:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 40px rgba(255,215,0,.25);
+}
+
+.stats h1{
+    color:#FFD700;
+    font-size:45px;
+}
+
+.stats p{
+    margin-top:10px;
+    color:#ddd;
+}
+
+
+/* ===========================
+   BAŞLIKLAR
+=========================== */
+
+.sectionTitle{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.sectionTitle h2{
+    font-size:48px;
+    color:#FFD700;
+}
+
+.sectionTitle p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+
+/* ===========================
+   ŞARKILAR
+=========================== */
+
+#songs{
+
+    padding:120px 8%;
 
 }
 
-section{
+.songGrid{
 
-min-height:100vh;
+    display:grid;
 
-padding:120px 8%;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
 
 }
+
+.songCard{
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,215,0,.15);
+
+    transition:.4s;
+
+    backdrop-filter:blur(15px);
+
+}
+
+.songCard:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 0 35px rgba(255,215,0,.25);
+
+}
+
+.cover{
+
+    height:220px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#111;
+
+    font-size:70px;
+
+    color:#FFD700;
+
+}
+
+.songCard h3{
+
+    padding-top:25px;
+
+    text-align:center;
+
+}
+
+.songCard p{
+
+    text-align:center;
+
+    color:#aaa;
+
+    margin:10px 0 20px;
+
+}
+
+.songCard button{
+
+    width:85%;
+
+    margin:0 auto 25px;
+
+    display:block;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:50px;
+
+    background:linear-gradient(#FFD700,#ff9900);
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.songCard button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ===========================
+   ALBÜMLER
+=========================== */
+
+#albums{
+
+    padding:120px 8%;
+
+}
+
+.albumGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.albumCard{
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,215,0,.15);
+
+    transition:.4s;
+
+}
+
+.albumCard:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 35px rgba(255,215,0,.25);
+
+}
+
+.albumCover{
+
+    width:180px;
+
+    height:180px;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    background:#111;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:65px;
+
+    color:#FFD700;
+
+}
+
+.albumCard h3{
+
+    margin-top:25px;
+
+}
+
+.albumCard span{
+
+    color:#999;
+
+}
+
+
+/* ===========================
+   VİDEOLAR
+=========================== */
+
+#videos{
+
+    padding:120px 8%;
+
+}
+
+.videoGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+    gap:30px;
+
+}
+
+.videoCard{
+
+    background:#111;
+
+    border-radius:25px;
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,215,0,.15);
+
+    transition:.4s;
+
+}
+
+.videoCard:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 35px rgba(255,215,0,.25);
+
+}
+
+.videoCard i{
+
+    font-size:75px;
+
+    color:red;
+
+    margin-bottom:20px;
+
+}
+
+
+/* ===========================
+   GALERİ
+=========================== */
+
+#gallery{
+
+    padding:120px 8%;
+
+}
+
+.galleryGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+
+}
+
+.galleryItem{
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    border:2px solid rgba(255,215,0,.15);
+
+}
+
+.galleryItem img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+.galleryItem:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ===========================
+   İLETİŞİM
+=========================== */
+
+#contact{
+
+    padding:120px 8%;
+
+}
+
+.contactCard{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:30px;
+
+    padding:50px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,215,0,.2);
+
+}
+
+.contactCard h2{
+
+    color:#FFD700;
+
+    margin-bottom:30px;
+
+}
+
+.contactCard p{
+
+    margin:15px 0;
+
+}
+
+.contactCard a{
+
+    color:#FFD700;
+
+    text-decoration:none;
+
+}
+
+.contactSocial{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+.contactSocial a{
+
+    font-size:30px;
+
+    transition:.3s;
+
+}
+
+.contactSocial a:hover{
+
+    transform:translateY(-6px);
+
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    padding:40px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,215,0,.15);
+
+    margin-top:80px;
+
+}
+
+footer h2{
+
+    color:#FFD700;
+
+    margin-bottom:15px;
+
+}
+
+footer p{
+
+    color:#999;
+
+}
+
+/* CSS PART 3 - Profesyonel Efektler */
+
+/* Sayfa genel görünüm */
+body {
+    background: linear-gradient(135deg, #111, #2b2b2b);
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Ana bölüm (Hero) */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+/* Üstüne karartma efekti */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+
+/* Hero yazıları */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 55px;
+    letter-spacing: 2px;
+    animation: yazigir 1.5s ease;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+
+/* Yazı animasyonu */
+@keyframes yazigir {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Kart efektleri */
+.card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    transition: 0.4s;
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+
+/* Link görünümü */
+a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #aaa;
+}
+
+
+/* Sayfa geçiş efekti */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Küçük ekran */
+@media(max-width:768px){
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* ===== CSS PART 3 ===== */
+/* Premium Görünüm ve Animasyonlar */
+
+
+/* Ana başlık efekti */
+h1 {
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+/* Bölüm alanları */
+section {
+    padding: 60px 30px;
+}
+
+
+/* Hero alanı */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+/* Hero karartma */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Başlık animasyonu */
+.hero h1 {
+    animation: fadeDown 1.2s ease;
+}
+
+
+.hero p {
+    animation: fadeUp 1.5s ease;
+}
+
+
+/* Animasyonlar */
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Cam efekti kutular */
+.box {
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+/* Hover efekti */
+.box:hover {
+    transform: scale(1.03);
+    transition: 0.4s;
+}
+
+
+/* Sayfa kaydırma */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Mobil ayar */
+@media(max-width:768px){
+
+    section {
+        padding: 35px 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+}
+
+/* ===== CSS PART 4 ===== */
+/* Menü + Sosyal Alan + Premium Efektler */
+
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
+}
+
+
+/* Logo */
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* Menü linkleri */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+
+.nav-links a {
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+
+/* Sosyal medya kutuları */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+
+.social a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.15);
+    transition: 0.4s;
+}
+
+
+.social a:hover {
+    transform: translateY(-8px);
+}
+
+
+/* Fotoğraf kart efekti */
+.photo-card {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+
+.photo-card img {
+    width: 100%;
+    display: block;
+    transition: 0.5s;
+}
+
+
+.photo-card:hover img {
+    transform: scale(1.1);
+}
+
+
+/* Alt bilgi */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0,0,0,0.4);
+    margin-top: 40px;
+}
+
+
+/* Mobil menü */
+@media(max-width:768px){
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+}
+
+
+/* ===== CSS PART 5 ===== */
+/* Premium Galeri + Profil Kartı */
+
+
+.profile-card {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    text-align: center;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+
+.profile-card img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+
+.profile-card h2 {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+
+.gallery img {
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+
+.gallery img:hover {
+    filter: brightness(1.15);
+}
+
+
+/* Premium buton */
+.premium-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 40px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    transition: .4s;
+}
+
+
+.premium-btn:hover {
+    transform: scale(1.08);
+}
+
+
+
+/* ===== CSS PART 6 ===== */
+/* Müzik Sanatçısı Tasarımı */
+
+
+.music-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 500px;
+    backdrop-filter: blur(12px);
+}
+
+
+.music-card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+
+.music-card h3 {
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+
+.play-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    transition: .3s;
+}
+
+
+.play-btn:hover {
+    transform: scale(1.15);
+}
+
+
+/* Albüm efekti */
+.album-cover {
+    transition: .5s;
+}
+
+
+.album-cover:hover {
+    transform: rotate(3deg) scale(1.05);
+}
+
+
+/* ===== CSS PART 7 ===== */
+/* Mobil Uyumluluk + Son Dokunuşlar */
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+@media(max-width:768px){
+
+    .navbar {
+        flex-direction: column;
+    }
+
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .hero {
+        min-height: 70vh;
+        padding: 20px;
+    }
+
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+
+    .gallery {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+
+    .profile-card {
+        margin: 20px 15px;
+    }
+
+
+    .music-card {
+        margin: 15px;
+    }
+
+}
+
+
+/* Yumuşak geçiş */
+body {
+    overflow-x: hidden;
+}
+
+
+button,
+a,
+img {
+    transition: .3s ease;
+}
+
+
+
+
+
+
